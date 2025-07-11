@@ -115,11 +115,11 @@ def send_alert(video_path, media_path):
         session.close()
 
 def main():
-    video_file = "video.mp4"
+    video_file = "vid.mp4"
     print("[INFO] Utilisation de la vidéo existante :", video_file)
     result = detect_bird_in_video(video_file)
     print("[INFO] Résultat :", result)
-    if result['birds_in_frame'] > 10:
+    if result['birds_in_frame'] > 6:
         print("[ALERTE] Trop d'oiseaux détectés. Activation du buzzer.")
         GPIO.output(BUZZER_PIN, GPIO.HIGH)
         time.sleep(2)
